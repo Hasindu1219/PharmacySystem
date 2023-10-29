@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pharmacyshopmanagementsystem.Admin.AdminControlPanel">
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" stylesheets="@../../../style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pharmacyshopmanagementsystem.Admin.AdminControlPanel">
     <children>
         <VBox prefHeight="800.0" prefWidth="250.0">
             <children>
@@ -23,7 +23,7 @@
                                     </image>
                                 </ImageView>
                             </children></Pane>
-                        <Button layoutX="13.0" layoutY="141.0" mnemonicParsing="false" onAction="#check" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Dashboard" textFill="WHITE">
+                        <Button fx:id="dashbtn" layoutX="13.0" layoutY="141.0" mnemonicParsing="false" onAction="#dashbutton" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Dashboard" textFill="WHITE">
                             <font>
                                 <Font name="Century Gothic Italic" size="16.0" />
                             </font>
@@ -35,7 +35,7 @@
                                 </ImageView>
                      </graphic>
                         </Button>
-                        <Button fx:id="admin_logout_btn1" layoutX="19.0" layoutY="709.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="206.0" styleClass="admin_logout_btn1" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="LOGOUT">
+                        <Button fx:id="logoutbtn" layoutX="19.0" layoutY="709.0" mnemonicParsing="false" onAction="#logout" prefHeight="56.0" prefWidth="206.0" styleClass="admin_logout_btn1" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="LOGOUT">
                             <graphic>
                                 <ImageView fitHeight="32.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -47,12 +47,12 @@
                                 <Font name="Candara" size="14.0" />
                             </font>
                         </Button>
-                  <Button layoutX="13.0" layoutY="208.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Staff" textFill="WHITE">
+                  <Button fx:id="staffbtn" layoutX="13.0" layoutY="208.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Staff" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="16.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="274.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Customer" textFill="WHITE">
+                  <Button fx:id="customerbtn" layoutX="10.0" layoutY="274.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Customer" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="16.0" />
                      </font>
@@ -64,7 +64,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="10.0" layoutY="345.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Medicine" textFill="WHITE">
+                  <Button fx:id="medicinebtn" layoutX="10.0" layoutY="345.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Medicine" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="16.0" />
                      </font>
@@ -76,7 +76,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="10.0" layoutY="410.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Finance" textFill="WHITE">
+                  <Button fx:id="financebtn" layoutX="10.0" layoutY="410.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Finance" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="16.0" />
                      </font>
@@ -88,7 +88,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="10.0" layoutY="477.0" mnemonicParsing="false" onAction="#check" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Supplier" textFill="WHITE">
+                  <Button fx:id="supplierbtn" layoutX="10.0" layoutY="477.0" mnemonicParsing="false" onAction="#check" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Supplier" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="16.0" />
                      </font>
@@ -100,12 +100,12 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="13.0" layoutY="545.0" mnemonicParsing="false" onAction="#check" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Report" textFill="WHITE">
+                  <Button fx:id="reportbtn" layoutX="13.0" layoutY="545.0" mnemonicParsing="false" onAction="#check" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Report" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="16.0" />
                      </font>
                      <graphic>
-                        <ImageView fx:id="btn_dashboard111111" fitHeight="42.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="42.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../icons/reporting.png" />
                            </image>
@@ -128,7 +128,7 @@
                         <Font name="System Bold Italic" size="46.0" />
                     </font>
                 </Text>
-                <Button fx:id="admin_settings_btn" layoutX="638.0" layoutY="20.0" mnemonicParsing="false" onAction="#check" prefHeight="42.0" prefWidth="117.0" styleClass="admin_settings_btn" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Settings" textFill="#fff9f9" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="18.0">
+                <Button fx:id="settingstbtn" layoutX="638.0" layoutY="20.0" mnemonicParsing="false" onAction="#check" prefHeight="42.0" prefWidth="117.0" styleClass="admin_settings_btn" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Settings" textFill="#fff9f9" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="18.0">
                     <graphic>
                         <ImageView fitHeight="32.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -142,6 +142,6 @@
                 </Button>
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="content_anchor_pane" layoutX="267.0" layoutY="102.0" prefHeight="683.0" prefWidth="719.0" styleClass="content_anchor_pane" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" AnchorPane.bottomAnchor="14.799999999999955" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="13.799999999999955" AnchorPane.topAnchor="102.0" />
+        <AnchorPane fx:id="dashAP" layoutX="267.0" layoutY="102.0" prefHeight="683.0" prefWidth="719.0" styleClass="content_anchor_pane" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" AnchorPane.bottomAnchor="14.799999999999955" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="13.799999999999955" AnchorPane.topAnchor="102.0" />
     </children>
 </AnchorPane>

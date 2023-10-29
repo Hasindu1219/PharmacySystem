@@ -1,7 +1,7 @@
 module com.example.pharmacyshopmanagementsystem {
     requires javafx.controls;
     requires javafx.fxml;
-
+    requires java.sql;
 
 
     opens com.pharmacyshopmanagementsystem to javafx.fxml;
