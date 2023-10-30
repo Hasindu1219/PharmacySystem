@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="40f331ff-6d53-4a7c-a474-a8858d5e2c16" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/java/com/pharmacyshopmanagementsystem/Admin/AdminControlPanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/java/com/pharmacyshopmanagementsystem/MainClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/com/pharmacyshopmanagementsystem/Admin/AdminControlPanel.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/icons/ad.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/icons/admin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/icons/customer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/icons/financial.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/icons/icons8-dashboard-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/icons/icons8-dashboard-66.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/icons/icons8-exit-48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/icons/icons8-user-100.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/icons/medicine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/icons/reporting.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/icons/settings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/icons/staff.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/icons/supplies.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/style.css" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2XQL0Ow8rdrutslv82esQngx1xQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Sahan/Desktop/ss/PharmacySystem/PharmacyShopManagementSystem/src/main/java/com/pharmacyshopmanagementsystem&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sahan\Desktop\ss\PharmacySystem\PharmacyShopManagementSystem\src\main\java\com\pharmacyshopmanagementsystem" />
+      <recent name="C:\Users\Sahan\Desktop\ss\PharmacySystem\PharmacyShopManagementSystem\src\main\resources\com\pharmacyshopmanagementsystem\Admin" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.pharmacyshopmanagementsystem" />
+      <recent name="com.pharmacyshopmanagementsystem.DBConnection" />
+      <recent name="DBconnection" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="40f331ff-6d53-4a7c-a474-a8858d5e2c16" name="Changes" comment="" />
+      <created>1698556137312</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698556137312</updated>
+      <workItem from="1698556137314" duration="5226000" />
+      <workItem from="1698561396456" duration="883000" />
+      <workItem from="1698562315607" duration="862000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
