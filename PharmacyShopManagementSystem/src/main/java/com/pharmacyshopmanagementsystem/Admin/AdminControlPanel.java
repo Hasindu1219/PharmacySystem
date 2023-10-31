@@ -54,6 +54,9 @@ public class AdminControlPanel {
     @FXML
     private AnchorPane dashAP;
 
+    @FXML
+    private AnchorPane staffAP;
+
 
 
 
