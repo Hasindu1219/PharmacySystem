@@ -55,7 +55,21 @@ public class AdminControlPanel {
     private AnchorPane dashAP;
 
     @FXML
-    private AnchorPane staffAP;
+    private AnchorPane dashStaff;
+
+    @FXML
+    private AnchorPane updateAp;
+    @FXML
+    private AnchorPane removeAP;
+    @FXML
+    private AnchorPane addAP;
+
+    @FXML
+    private Button addbtn;
+    @FXML
+    private Button removebtn;
+    @FXML
+    private Button updatebtn;
 
 
 
@@ -65,13 +79,85 @@ public class AdminControlPanel {
     {
         if(event.getSource() == dashbtn)
         {
-            dashAP.setVisible(false);
+            dashAP.setVisible(true);
+            dashStaff.setVisible(false);
 
         }
 
         else
         {
             dashAP.setVisible(false);
+        }
+
+    }
+
+    //staff section
+    @FXML
+    void staffbutton(ActionEvent event)
+    {
+        if(event.getSource() ==staffbtn)
+        {
+             dashStaff.setVisible(true);
+             dashAP.setVisible(false);
+
+
+        }
+
+        else
+        {
+            dashAP.setVisible(false);
+        }
+
+    }
+
+    //additional button
+    @FXML
+    void add_button(ActionEvent event){
+
+        if(event.getSource() ==addbtn)
+        {
+            addAP.setVisible(true);
+            updateAp.setVisible(false);
+            removeAP.setVisible(false);
+
+        }
+        else
+        {
+            addAP.setVisible(false);
+        }
+
+    }
+    //additional button
+    @FXML
+    void update_button(ActionEvent event){
+
+        if(event.getSource() ==updatebtn)
+        {
+            updateAp.setVisible(true);
+            addAP.setVisible(false);
+            removeAP.setVisible(false);
+
+        }
+        else
+        {
+            updateAp.setVisible(false);
+        }
+
+    }
+    //additional button
+    @FXML
+    void remove_button(ActionEvent event){
+
+        if(event.getSource() ==removebtn)
+        {
+            removeAP.setVisible(true);
+            updateAp.setVisible(false);
+            addAP.setVisible(false);
+
+        }
+        else
+        {
+            removeAP.setVisible(true);
         }
 
     }
