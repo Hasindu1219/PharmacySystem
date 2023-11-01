@@ -77,3 +77,10 @@
     -fx-background-radius: 25px;
     -fx-border-style: solid;
 }
+.add_button{
+    -fx-background-color: linear-gradient(to bottom right, #151e4f, #93d9ec);
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-border-style: solid;
+}
