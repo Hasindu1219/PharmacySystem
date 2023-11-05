@@ -16,8 +16,7 @@ import javafx.stage.Stage;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
-import java.net.URL;
-import java.sql.*;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 
@@ -229,7 +228,6 @@ public class AdminControlPanel {
         }
 
     }
-            updatetextfield5.setText(svalue5);
     //additional button
     @FXML
     void remove_button(ActionEvent event){
