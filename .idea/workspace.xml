@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="40f331ff-6d53-4a7c-a474-a8858d5e2c16" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_graphics.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/java/com/pharmacyshopmanagementsystem/Admin/AdminControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/java/com/pharmacyshopmanagementsystem/Admin/AdminControlPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/com/pharmacyshopmanagementsystem/Admin/AdminControlPanel.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/PharmacyShopManagementSystem/src/main/resources/com/pharmacyshopmanagementsystem/Admin/AdminControlPanel.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,12 +47,12 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Sahan/Documents/javafx-sdk-20.0.2/lib/javafx.web.jar",
+    "last_opened_file_path": "C:/Users/Sahan/Desktop/SE project/v3/PharmacySystem/Connectors/mysql-connector-j-8.0.32.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
@@ -87,6 +84,7 @@
       <workItem from="1698609410615" duration="380000" />
       <workItem from="1698638517877" duration="1771000" />
       <workItem from="1698737270006" duration="1953000" />
+      <workItem from="1699166370037" duration="3361000" />
     </task>
     <servers />
   </component>
