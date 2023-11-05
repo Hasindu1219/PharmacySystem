@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class dbConnection {
     static java.sql.Connection con;
-    static String driver="com.mysql.jdbc.Driver";
+    static String driver="com.mysql.cj.jdbc.Driver";
     static String url="jdbc:mysql://localhost/pms";
     static String uname="root";
     static String password="";
