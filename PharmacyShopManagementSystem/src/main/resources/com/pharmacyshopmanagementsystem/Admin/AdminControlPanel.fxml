@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pharmacyshopmanagementsystem.Admin.AdminControlPanel">
+<AnchorPane fx:id="dashStaff" prefHeight="800.0" prefWidth="1000.0" stylesheets="@../../../style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pharmacyshopmanagementsystem.Admin.AdminControlPanel">
     <children>
         <VBox prefHeight="800.0" prefWidth="250.0">
             <children>
@@ -28,7 +31,7 @@
                                     </image>
                                 </ImageView>
                             </children></Pane>
-                        <Button layoutX="13.0" layoutY="141.0" mnemonicParsing="false" onAction="#check" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Dashboard" textFill="WHITE">
+                        <Button fx:id="dashbtn" layoutX="13.0" layoutY="141.0" mnemonicParsing="false" onAction="#dashbutton" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Dashboard" textFill="WHITE">
                             <font>
                                 <Font name="Century Gothic Italic" size="16.0" />
                             </font>
@@ -40,7 +43,7 @@
                                 </ImageView>
                      </graphic>
                         </Button>
-                        <Button fx:id="admin_logout_btn1" layoutX="19.0" layoutY="709.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="206.0" styleClass="admin_logout_btn1" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="LOGOUT">
+                        <Button fx:id="logoutbtn" layoutX="19.0" layoutY="709.0" mnemonicParsing="false" onAction="#logout" prefHeight="56.0" prefWidth="206.0" styleClass="admin_logout_btn1" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="LOGOUT">
                             <graphic>
                                 <ImageView fitHeight="32.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -52,12 +55,12 @@
                                 <Font name="Candara" size="14.0" />
                             </font>
                         </Button>
-                  <Button layoutX="13.0" layoutY="208.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Staff" textFill="WHITE">
+                  <Button fx:id="staffbtn" layoutX="13.0" layoutY="208.0" mnemonicParsing="false" onAction="#staffbutton" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Staff" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="16.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="274.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Customer" textFill="WHITE">
+                  <Button fx:id="customerbtn" layoutX="10.0" layoutY="274.0" mnemonicParsing="false" onAction="#customerButton" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Customer" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="16.0" />
                      </font>
@@ -69,7 +72,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="10.0" layoutY="345.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Medicine" textFill="WHITE">
+                  <Button fx:id="medicinebtn" layoutX="10.0" layoutY="345.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Medicine" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="16.0" />
                      </font>
@@ -81,7 +84,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="10.0" layoutY="410.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Finance" textFill="WHITE">
+                  <Button fx:id="financebtn" layoutX="10.0" layoutY="410.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Finance" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="16.0" />
                      </font>
@@ -93,7 +96,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="10.0" layoutY="477.0" mnemonicParsing="false" onAction="#check" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Supplier" textFill="WHITE">
+                  <Button fx:id="supplierbtn" layoutX="10.0" layoutY="477.0" mnemonicParsing="false" onAction="#check" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Supplier" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="16.0" />
                      </font>
@@ -105,12 +108,12 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button layoutX="13.0" layoutY="545.0" mnemonicParsing="false" onAction="#check" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Report" textFill="WHITE">
+                  <Button fx:id="reportbtn" layoutX="13.0" layoutY="545.0" mnemonicParsing="false" onAction="#check" prefHeight="54.0" prefWidth="223.0" styleClass="btn_dashboard" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Report" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="16.0" />
                      </font>
                      <graphic>
-                        <ImageView fx:id="btn_dashboard111111" fitHeight="42.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="42.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../icons/reporting.png" />
                            </image>
@@ -126,14 +129,14 @@
                 </AnchorPane>
             </children>
         </VBox>
-        <AnchorPane fx:id="admin_header" layoutX="260.0" layoutY="13.0" prefHeight="78.0" prefWidth="733.0" styleClass="admin_header" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="7.0">
+        <AnchorPane fx:id="admin_header" layoutX="260.0" layoutY="13.0" prefHeight="800.0" prefWidth="1000.0" styleClass="admin_header" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" AnchorPane.bottomAnchor="702.2" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="13.0">
             <children>
                 <Text fill="#969292" layoutX="74.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Panel" wrappingWidth="384.3831272125244">
                     <font>
                         <Font name="System Bold Italic" size="46.0" />
                     </font>
                 </Text>
-                <Button fx:id="admin_settings_btn" layoutX="638.0" layoutY="20.0" mnemonicParsing="false" onAction="#check" prefHeight="42.0" prefWidth="117.0" styleClass="admin_settings_btn" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Settings" textFill="#fff9f9" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="18.0">
+                <Button fx:id="settingstbtn" layoutX="638.0" layoutY="20.0" mnemonicParsing="false" onAction="#check" prefHeight="42.0" prefWidth="117.0" styleClass="admin_settings_btn" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" text="Settings" textFill="#fff9f9" AnchorPane.bottomAnchor="18.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="18.0">
                     <graphic>
                         <ImageView fitHeight="32.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -147,41 +150,215 @@
                 </Button>
             </children>
         </AnchorPane>
-      <AnchorPane layoutX="252.0" layoutY="140.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="636.0" prefWidth="981.0" visible="false">
+
+        <AnchorPane fx:id="dashAP" focusTraversable="true" layoutX="267.0" layoutY="102.0" prefHeight="683.0" prefWidth="719.0" styleClass="content_anchor_pane" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" visible="false" AnchorPane.bottomAnchor="14.799999999999955" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="13.799999999999955" AnchorPane.topAnchor="102.0" />
+      <AnchorPane fx:id="dashStaff" focusTraversable="true" layoutX="267.0" layoutY="102.0" onDragDetected="#staffbutton" prefHeight="683.0" prefWidth="719.0" styleClass="content_anchor_pane" stylesheets="@../../../style.css" visible="false" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="8.0">
          <children>
-            <ComboBox fx:id="report_type" layoutX="113.0" layoutY="24.0" onMouseClicked="#type" prefHeight="25.0" prefWidth="324.0" />
-            <Label layoutX="31.0" layoutY="28.0" text="Report Type" />
-            <Label layoutX="36.0" layoutY="77.0" text="Time Limit" />
-            <ComboBox fx:id="time_limit" layoutX="113.0" layoutY="73.0" onMouseClicked="#limit" prefHeight="25.0" prefWidth="324.0" />
-            <Button layoutX="461.0" layoutY="116.0" mnemonicParsing="false" onAction="#view_report" text="View Report" />
-            <ComboBox fx:id="Date_year" layoutX="113.0" layoutY="116.0" onMouseClicked="#D_year" prefHeight="25.0" prefWidth="71.0" visible="false" />
-            <ComboBox fx:id="Date_month" layoutX="198.0" layoutY="116.0" onMouseClicked="#D_month" prefHeight="25.0" prefWidth="131.0" visible="false" />
-            <ComboBox fx:id="Date_date" layoutX="339.0" layoutY="116.0" onMouseClicked="#D_date" prefHeight="25.0" prefWidth="99.0" visible="false" />
-            <Label fx:id="ld_date" layoutX="72.0" layoutY="175.0" text="Date" visible="false" />
-            <Pane layoutX="56.0" layoutY="166.0" prefHeight="459.0" prefWidth="678.0" style="-fx-border-color: red; -fx-background-color: #fff0a8;">
+            <HBox layoutX="96.0" layoutY="17.0" prefHeight="85.0" prefWidth="506.0">
                <children>
-                  <Label layoutX="134.0" layoutY="43.0" text=":" />
-                  <Label fx:id="date" layoutX="149.0" layoutY="44.0" />
-                  <Label layoutX="94.0" layoutY="45.0" text="Date" />
-                  <LineChart fx:id="line_chart" layoutX="20.0" layoutY="96.0" prefHeight="366.0" prefWidth="658.0">
-                     <xAxis>
-                        <CategoryAxis side="BOTTOM" fx:id="xaxis" />
-                     </xAxis>
-                     <yAxis>
-                        <NumberAxis fx:id="yaxis" side="LEFT" />
-                     </yAxis>
-                  </LineChart>
-                  <Label fx:id="title" contentDisplay="CENTER" layoutX="294.0" layoutY="9.0">
+                  <Label prefHeight="98.0" prefWidth="440.0" text="      CURRENT EMPLOYEE">
                      <font>
-                        <Font name="System Bold" size="17.0" />
+                        <Font name="Bodoni MT Condensed" size="41.0" />
                      </font>
                   </Label>
-                  <Label fx:id="sales" layoutX="46.0" layoutY="70.0" prefHeight="17.0" prefWidth="81.0" />
-                  <Label fx:id="Amount" layoutX="149.0" layoutY="70.0" />
-                  <Label layoutX="133.0" layoutY="70.0" text=":" />
+                  <Label prefHeight="102.0" prefWidth="329.0" text="     10">
+                     <font>
+                        <Font name="Bodoni MT" size="41.0" />
+                     </font>
+                  </Label>
                </children>
-            </Pane>
+            </HBox>
+            <Button fx:id="updatebtn" layoutX="514.0" layoutY="635.0" mnemonicParsing="false" onAction="#update_button" prefHeight="30.0" prefWidth="78.0" styleClass="add_button" stylesheets="@../../../style.css" text="UPDATE" textFill="WHITE" AnchorPane.rightAnchor="225.0">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Button>
+            <Button fx:id="addbtn" layoutX="404.0" layoutY="635.0" mnemonicParsing="false" onAction="#add_button" prefHeight="30.0" prefWidth="85.0" styleClass="add_button" stylesheets="@../../../style.css" text="ADD" textFill="WHITE" AnchorPane.rightAnchor="390.0">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Button>
+            <Button fx:id="removebtn" layoutX="622.0" layoutY="636.0" mnemonicParsing="false" onAction="#remove_button" prefHeight="30.0" prefWidth="78.0" styleClass="add_button" stylesheets="@../../../style.css" text="REMOVE" textFill="WHITE" AnchorPane.rightAnchor="80.0">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Button>
+            <AnchorPane fx:id="updateAp" focusTraversable="true" layoutX="656.0" layoutY="128.0" prefHeight="486.0" prefWidth="61.0" style="-fx-background-color: #156b86;" visible="false" AnchorPane.leftAnchor="652.0" AnchorPane.rightAnchor="10.0" />
+            <AnchorPane fx:id="removeAP" focusTraversable="true" layoutX="621.0" layoutY="128.0" prefHeight="486.0" prefWidth="70.0" style="-fx-background-color: ECC7C7;" visible="false" AnchorPane.leftAnchor="652.0" AnchorPane.rightAnchor="8.0" />
+            <SplitPane dividerPositions="0.6045130641330165" layoutX="18.0" layoutY="108.0" prefHeight="512.0" prefWidth="697.0" AnchorPane.bottomAnchor="61.200000000000045" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="108.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <TableView layoutX="6.0" layoutY="-1.0" prefHeight="505.0" prefWidth="391.0" AnchorPane.bottomAnchor="4.199999999999989" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="-1.0">
+                          <columns>
+                            <TableColumn prefWidth="106.4000244140625" text="EMP ID" />
+                            <TableColumn prefWidth="161.60003662109375" text="FNAME" />
+                              <TableColumn prefWidth="164.79998779296875" text="TP NUMBER" />
+                              <TableColumn prefWidth="186.39996337890625" text="E-mail" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <AnchorPane fx:id="addAP" focusTraversable="true" layoutX="6.0" layoutY="10.0" prefHeight="484.0" prefWidth="259.0" style="-fx-background-color: #156b86;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="10.0" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
          </children>
       </AnchorPane>
+
+        <AnchorPane fx:id="dashAP" layoutX="267.0" layoutY="102.0" prefHeight="683.0" prefWidth="719.0" styleClass="content_anchor_pane" stylesheets="@../../../../java/com/pharmacyshopmanagementsystem/style.css" visible="false" AnchorPane.bottomAnchor="14.799999999999955" AnchorPane.leftAnchor="267.0" AnchorPane.rightAnchor="13.799999999999955" AnchorPane.topAnchor="102.0" />
+      <AnchorPane fx:id="customerAP" focusTraversable="true" layoutX="260.0" layoutY="108.0" prefHeight="685.0" prefWidth="725.0" styleClass="content_anchor_pane" stylesheets="@../../../../../target/classes/style.css" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="11.0">
+         <children>
+            <Label layoutX="236.0" layoutY="14.0" prefHeight="63.0" prefWidth="270.0" text="Manage Customer" textAlignment="CENTER">
+               <font>
+                  <Font name="Britannic Bold" size="32.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="32.0" layoutY="74.0" prefHeight="75.0" prefWidth="663.0" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0">
+               <children>
+                  <Button fx:id="customerViewBtn" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#viewCustomerButton" prefHeight="26.0" prefWidth="100.0" text="View">
+                     <font>
+                        <Font name="Berlin Sans FB" size="23.0" />
+                     </font></Button>
+                  <Button fx:id="customerAddBtn" layoutX="185.0" layoutY="16.0" mnemonicParsing="false" onAction="#addCustomerButton" prefHeight="26.0" prefWidth="100.0" text="Add">
+                     <font>
+                        <Font name="Berlin Sans FB" size="21.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="customerUpdateBtn" layoutX="357.0" layoutY="17.0" mnemonicParsing="false" onAction="#updateCustomerButton" prefHeight="26.0" prefWidth="100.0" text="Update">
+                     <font>
+                        <Font name="Berlin Sans FB" size="22.0" />
+                     </font></Button>
+                  <Button fx:id="customerDeleteBtn" layoutX="523.0" layoutY="16.0" mnemonicParsing="false" onAction="#deleteCustomerButton" prefHeight="26.0" prefWidth="118.0" text="Delete">
+                     <font>
+                        <Font name="Berlin Sans FB" size="22.0" />
+                     </font></Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="customerTableAP" layoutX="39.199999999999996" layoutY="157.0" prefHeight="504.0" prefWidth="653.0" style="-fx-background-color: rgb(128,128,255); -fx-background-radius: 10px;" visible="false" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="35.0">
+               <children>
+                  <TableView fx:id="tableView" layoutX="14.4" layoutY="86.0" prefHeight="386.0" prefWidth="621.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0">
+                    <columns>
+                      <TableColumn fx:id="tableCID" prefWidth="79.20001220703125" text="Customer ID" />
+                      <TableColumn fx:id="tableFName" prefWidth="95.199951171875" text="First Name" />
+                        <TableColumn fx:id="tableLName" prefWidth="103.99996948242188" text="Last Name" />
+                        <TableColumn fx:id="tableDOB" prefWidth="108.0" text="Date of Birth" />
+                        <TableColumn fx:id="tableAddress" prefWidth="116.79998779296875" text="Address" />
+                        <TableColumn fx:id="tableTP" prefWidth="138.39996337890625" text="TP" />
+                    </columns>
+                  </TableView>
+                  <TextField fx:id="searchTextField" layoutX="167.0" layoutY="34.0" prefHeight="26.0" prefWidth="199.0" promptText="Search here" />
+                  <Button fx:id="searchCustomerBtn" layoutX="547.0" layoutY="31.0" mnemonicParsing="false" onAction="#customerSearch" prefHeight="26.0" prefWidth="86.0" text="Search ">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+                  <ComboBox fx:id="searchOptionCB" layoutX="387.0" layoutY="35.0" prefWidth="150.0" promptText="Select option" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="customerAddAP" layoutX="47.0" layoutY="184.0" prefHeight="482.0" prefWidth="655.0" style="-fx-background-color: rgb(128,128,255); -fx-background-radius: 10px;" AnchorPane.bottomAnchor="26.399999999999977" AnchorPane.leftAnchor="47.0" AnchorPane.rightAnchor="29.799999999999955" AnchorPane.topAnchor="184.0">
+               <children>
+                  <Label layoutX="65.0" layoutY="75.0" prefHeight="45.0" prefWidth="110.0" text="Customer ID:">
+                     <font>
+                        <Font name="Yu Gothic UI Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="65.0" layoutY="124.0" prefHeight="45.0" prefWidth="110.0" text="First Name:">
+                     <font>
+                        <Font name="Yu Gothic UI Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="65.0" layoutY="178.0" prefHeight="45.0" prefWidth="110.0" text="Last Name:">
+                     <font>
+                        <Font name="Yu Gothic UI Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="65.0" layoutY="233.0" prefHeight="45.0" prefWidth="110.0" text="DOB:">
+                     <font>
+                        <Font name="Yu Gothic UI Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="65.0" layoutY="288.0" prefHeight="45.0" prefWidth="110.0" text="Address:">
+                     <font>
+                        <Font name="Yu Gothic UI Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="65.0" layoutY="340.0" prefHeight="46.0" prefWidth="142.0" text="Telephone Number:">
+                     <font>
+                        <Font name="Yu Gothic UI Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="268.0" layoutY="14.0" prefHeight="28.0" prefWidth="166.0" text="Add Customers">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cidTF" layoutX="204.0" layoutY="85.0" prefHeight="26.0" prefWidth="346.0" promptText="Enter customer ID*" />
+                  <TextField fx:id="fnameTF" layoutX="204.0" layoutY="134.0" prefHeight="26.0" prefWidth="346.0" promptText="Enter First Name*" />
+                  <TextField fx:id="lNameTF" layoutX="204.0" layoutY="188.0" prefHeight="26.0" prefWidth="346.0" promptText="Enter Last Name" />
+                  <TextField fx:id="addressTF" layoutX="204.0" layoutY="298.0" prefHeight="26.0" prefWidth="346.0" promptText="Enter Address*" />
+                  <TextField fx:id="tpTF" layoutX="204.0" layoutY="349.0" prefHeight="26.0" prefWidth="346.0" promptText="Enter Telephone Number*" />
+                  <Button fx:id="customerResetBtn1" layoutX="268.0" layoutY="408.0" mnemonicParsing="false" onAction="#resetButton1" prefHeight="26.0" prefWidth="67.0" text="Reset">
+                     <font>
+                        <Font name="Cooper Black" size="15.0" />
+                     </font></Button>
+                  <Button fx:id="customerAddAddbtn" layoutX="427.0" layoutY="408.0" mnemonicParsing="false" onAction="#addRecord" prefHeight="26.0" prefWidth="67.0" text="Add">
+                     <font>
+                        <Font name="Cooper Black" size="15.0" />
+                     </font></Button>
+                  <DatePicker fx:id="dateOfBirthPicker" layoutX="204.0" layoutY="243.0" prefHeight="26.0" prefWidth="346.0" promptText="Enter Birtday" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="customerUpdateAP" layoutX="43.0" layoutY="186.0" prefHeight="482.0" prefWidth="655.0" style="-fx-background-color: rgb(128,128,255); -fx-background-radius: 10px;" visible="false" AnchorPane.leftAnchor="40.799999999999955" AnchorPane.rightAnchor="26.59999999999991">
+               <children>
+                  <Label layoutX="88.0" layoutY="110.0" prefHeight="45.0" prefWidth="110.0" text="Customer ID:">
+                     <font>
+                        <Font name="Yu Gothic UI Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="88.0" layoutY="285.0" prefHeight="45.0" prefWidth="110.0" text="Address:">
+                     <font>
+                        <Font name="Yu Gothic UI Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="88.0" layoutY="194.0" prefHeight="45.0" prefWidth="110.0" text="Telephone Number:">
+                     <font>
+                        <Font name="Yu Gothic UI Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="258.0" layoutY="14.0" prefHeight="28.0" prefWidth="165.0" text="Update Customers">
+                     <font>
+                        <Font name="Webdings" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="addressTF1" layoutX="250.0" layoutY="295.0" prefHeight="26.0" prefWidth="346.0" promptText="Enter Address*" />
+                  <TextField fx:id="tpTF1" layoutX="250.0" layoutY="204.0" prefHeight="26.0" prefWidth="346.0" promptText="Enter Telephone Number*" />
+                  <TextField fx:id="cidTF1" layoutX="250.0" layoutY="120.0" prefHeight="26.0" prefWidth="346.0" promptText="Enter Customer ID*" />
+                  <Button fx:id="customerUpdateResetBtn3" layoutX="294.0" layoutY="379.0" mnemonicParsing="false" onAction="#resetButton3" prefHeight="26.0" prefWidth="67.0" text="Reset" />
+                  <Button fx:id="customerUpdateUpdatebtn" layoutX="487.0" layoutY="379.0" mnemonicParsing="false" onAction="#updateRecord" prefHeight="26.0" prefWidth="67.0" text="Update" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="customerDeleteAP" layoutX="43.0" layoutY="179.0" prefHeight="486.0" prefWidth="655.0" style="-fx-background-color: rgb(128,128,255); -fx-background-radius: 10px;" visible="false" AnchorPane.leftAnchor="43.199999999999996" AnchorPane.rightAnchor="28.79999999999984">
+               <children>
+                  <Label layoutX="84.0" layoutY="208.0" prefHeight="45.0" prefWidth="110.0" text="Customer ID:">
+                     <font>
+                        <Font name="Yu Gothic UI Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="245.0" layoutY="32.0" prefHeight="28.0" prefWidth="165.0" text="Dalete Customers">
+                     <font>
+                        <Font name="Webdings" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cidTF2" layoutX="246.0" layoutY="218.0" prefHeight="26.0" prefWidth="346.0" promptText="Enter Customer ID*" />
+                  <Button fx:id="customerResetBtn2" layoutX="290.0" layoutY="344.0" mnemonicParsing="false" onAction="#resetButton2" prefHeight="26.0" prefWidth="67.0" text="Reset" />
+                  <Button fx:id="customerDeleteDeletebtn" layoutX="494.0" layoutY="343.0" mnemonicParsing="false" onAction="#deleteRecord" prefHeight="26.0" prefWidth="67.0" text="Delete" />
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+
     </children>
 </AnchorPane>
