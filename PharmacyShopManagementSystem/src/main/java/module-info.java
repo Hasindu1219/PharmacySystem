@@ -8,4 +8,6 @@ module com.example.pharmacyshopmanagementsystem {
     exports com.pharmacyshopmanagementsystem;
     exports com.pharmacyshopmanagementsystem.Admin;
     opens com.pharmacyshopmanagementsystem.Admin to javafx.fxml;
+    exports com.pharmacyshopmanagementsystem.user;
+    opens com.pharmacyshopmanagementsystem.user to javafx.fxml;
 }

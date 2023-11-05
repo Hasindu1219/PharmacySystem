@@ -25,6 +25,23 @@
     -fx-border-style: solid;
 }
 
+.btn_dashboard:hover{
+    -fx-border-color: WHITE;
+    -fx-border-width: 3px 3px 3px 3px;
+}
+
+
+.admin_settings_btn:hover{
+    -fx-border-color: WHITE;
+    -fx-border-width: 3px 3px 3px 3px;
+}
+
+.admin_logout_btn1:hover{
+    -fx-border-color: WHITE;
+    -fx-border-width: 3px 3px 3px 3px;
+}
+
+
 .admin_header{
     -fx-background-color: linear-gradient(to bottom right, #151e4f, #156b86);
     -fx-border-color: linear-gradient(to bottom right, #151e4f, #156b86);
@@ -60,3 +77,11 @@
     -fx-background-radius: 25px;
     -fx-border-style: solid;
 }
+.add_button{
+    -fx-background-color: linear-gradient(to bottom right, #151e4f, #93d9ec);
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-border-style: solid;
+}
+
