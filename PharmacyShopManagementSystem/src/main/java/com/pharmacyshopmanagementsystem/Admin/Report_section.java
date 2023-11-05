@@ -2,8 +2,8 @@ package com.pharmacyshopmanagementsystem.Admin;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
@@ -11,42 +11,20 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
+
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.fxml.FXML;
-import javafx.scene.Parent;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.Date;
 
-
-public class AdminControlPanel extends Application {
-    @FXML
-    private Stage stage;
-
-    private Scene scene;
-
-    private Parent root;
-
-    @FXML
-    void check()
-    {
-        System.out.println("clicked");
-    }
-
-
-
+public class Report_section extends Application {
     @FXML
     private Pane chart_pannel;
-    @FXML
-    private AnchorPane Adnin_Report_AP;
     @FXML
     private Label ld_date;
     @FXML
@@ -82,50 +60,50 @@ public class AdminControlPanel extends Application {
 
     @FXML
     private Label title;
-    Connection con=new Db_connect().DBConet();
+Connection con=new Db_connect().DBConet();
 
-    int return_value(){
+int return_value(){
         String s=Date_month.getValue();
-        int res=0;
-        if(s=="January"){
-            return res=1;
-        }
-        else if(s=="February"){
-            return res=2;
-        }
-        else if(s=="March"){
-            return res=3;
-        }
-        else if(s=="April"){
-            return res=4;
-        }
-        else if(s=="May"){
-            return res=5;
-        }
-        else if(s=="June"){
-            return res=6;
-        }
-        else if(s=="July"){
-            return res=7;
-        }
-        else if(s=="August"){
-            return res=8;
-        }
-        else if(s=="September"){
-            return res=9;
-        }
-        else if(s=="October"){
-            return  res=10;
-        }
-        else if(s=="November"){
-            return res=11;
-        }
-        else if(s=="December"){
-            return res=12;
-        }
-
-        return res;
+int res=0;
+    if(s=="January"){
+        return res=1;
     }
+    else if(s=="February"){
+        return res=2;
+    }
+    else if(s=="March"){
+        return res=3;
+    }
+    else if(s=="April"){
+        return res=4;
+    }
+    else if(s=="May"){
+        return res=5;
+    }
+    else if(s=="June"){
+        return res=6;
+    }
+    else if(s=="July"){
+        return res=7;
+    }
+    else if(s=="August"){
+        return res=8;
+    }
+    else if(s=="September"){
+        return res=9;
+    }
+    else if(s=="October"){
+        return  res=10;
+    }
+    else if(s=="November"){
+        return res=11;
+    }
+    else if(s=="December"){
+        return res=12;
+    }
+
+    return res;
+}
     @FXML
     void view_report() {
         Set<String> category=new HashSet<>();
@@ -152,32 +130,32 @@ public class AdminControlPanel extends Application {
             XYChart.Series<String,Number> series=new XYChart.Series<>();
             series.setName("Sales Data");
             try{
-                PreparedStatement preparedStatement = con.prepareStatement("select m.medicine_name,s.quantity,m.unit_price from medicine m left join sale s on m.medicine_id=s.medicine_id where s.sale_date=?");
-                preparedStatement.setString(1, format_date);
-                ResultSet re=preparedStatement.executeQuery();
+            PreparedStatement preparedStatement = con.prepareStatement("select m.medicine_name,s.quantity,m.unit_price from medicine m left join sale s on m.medicine_id=s.medicine_id where s.sale_date=?");
+            preparedStatement.setString(1, format_date);
+            ResultSet re=preparedStatement.executeQuery();
 
-                double Total = 0;
-                while(re.next()){
-                    category.add(re.getString("medicine_name"));
-                    List<String> cate= new ArrayList<>(category);
-                    Collections.sort(cate);
-                    xaxis.setCategories(FXCollections.observableArrayList(cate));
-                    double unit_price=re.getDouble("unit_price");
-                    int quntity=re.getInt("quantity");
-                    Total=(Total)+(unit_price*quntity);
-                    sales.setText("Total Sales");
-                    Amount.setText(String.valueOf(Total));
+double Total = 0;
+          while(re.next()){
+              category.add(re.getString("medicine_name"));
+              List<String> cate= new ArrayList<>(category);
+              Collections.sort(cate);
+              xaxis.setCategories(FXCollections.observableArrayList(cate));
+                double unit_price=re.getDouble("unit_price");
+                int quntity=re.getInt("quantity");
+                Total=(Total)+(unit_price*quntity);
+                sales.setText("Total Sales");
+                Amount.setText(String.valueOf(Total));
 
-                    series.getData().add(new XYChart.Data<>(re.getString("medicine_name"),re.getInt("quantity")));
+                series.getData().add(new XYChart.Data<>(re.getString("medicine_name"),re.getInt("quantity")));
 
-                }
+            }
                 line_chart.getData().add(series);
 
 
 
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         }
         if(type=="Sales Report" && limit=="Monthly"){
             line_chart.getData().clear();
@@ -204,7 +182,7 @@ public class AdminControlPanel extends Application {
                     sales.setText("Total Sales");
                     Amount.setText(String.valueOf(Total));
                     series.getData().add(new XYChart.Data<>(re.getString("medicine_name"),re.getInt("quantity")));
-
+                    
                 }
                 line_chart.getData().add(series);
 
@@ -303,22 +281,22 @@ public class AdminControlPanel extends Application {
                 preparedStatement.setString(2,Date_month.getValue());
                 ResultSet re=preparedStatement.executeQuery();
                 XYChart.Series<String,Number> series=new XYChart.Series<>();
-                while(re.next()){
-                    category.add(re.getString("position"));
-                    List<String> cate= new ArrayList<>(category);
-                    Collections.sort(cate);
-                    xaxis.setCategories(FXCollections.observableArrayList(cate));
-                    series.getData().add(new XYChart.Data<>(re.getString(1),re.getInt(2)));
+            while(re.next()){
+                category.add(re.getString("position"));
+                List<String> cate= new ArrayList<>(category);
+                Collections.sort(cate);
+                xaxis.setCategories(FXCollections.observableArrayList(cate));
+                series.getData().add(new XYChart.Data<>(re.getString(1),re.getInt(2)));
 
-                }
+            }
                 line_chart.getData().add(series);
 
 
-            } catch (SQLException e) {
+        } catch (SQLException e) {
                 System.out.println(e);
-            }
-
         }
+
+    }
         if(type=="Attendance Report" && limit=="Yearly"){
             line_chart.getData().clear();
             xaxis.getCategories().clear();
@@ -377,8 +355,8 @@ public class AdminControlPanel extends Application {
     }
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxm = new FXMLLoader(Report_section.class.getResource("AdminControlPanel.fxml"));
-        Scene scene = new Scene(fxm.load(), 1000, 800);
+        FXMLLoader fxm = new FXMLLoader(Report_section.class.getResource("Report_section.fxml"));
+        Scene scene = new Scene(fxm.load(), 981, 542);
         stage.setTitle("Report section");
         stage.setResizable(false);
         stage.setScene(scene);
@@ -392,27 +370,25 @@ public class AdminControlPanel extends Application {
 
     public void limit() {
         time_limit.getItems().addAll("Daily","Monthly","Yearly");
-        if(time_limit.getValue()=="Daily"){
-            Date_year.setVisible(true);
-            Date_month.setVisible(true);
-            Date_date.setVisible(true);
-            ld_date.setVisible(true);
-        }
-        else if(time_limit.getValue()=="Monthly"){
-            Date_date.setVisible(false);
-            Date_year.setVisible(true);
-            Date_month.setVisible(true);
-            ld_date.setVisible(true);
-        }
-        else if(time_limit.getValue()=="Yearly"){
+        if(time_limit.getValue()=="Yearly"){
 
             Date_month.setVisible(false);
             Date_date.setVisible(false);
             Date_year.setVisible(true);
             ld_date.setVisible(true);
         }
-
-
+        if(time_limit.getValue()=="Monthly"){
+            Date_date.setVisible(false);
+            Date_year.setVisible(true);
+            Date_month.setVisible(true);
+            ld_date.setVisible(true);
+        }
+        if(time_limit.getValue()=="Daily"){
+            Date_year.setVisible(true);
+            Date_month.setVisible(true);
+            Date_date.setVisible(true);
+            ld_date.setVisible(true);
+        }
     }
 
     public static void main(String[] args) {
@@ -448,8 +424,4 @@ public class AdminControlPanel extends Application {
             Date_date.getItems().addAll(String.valueOf(i));
         }
     }
-
-
-
 }
-

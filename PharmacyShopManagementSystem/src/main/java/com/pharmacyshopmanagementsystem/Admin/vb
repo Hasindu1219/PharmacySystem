@@ -1,0 +1,33 @@
+import java.util.Scanner;
+import java.util.Calendar;
+import java.util.Date;
+
+public class CreateDateFromUserInput {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+
+        int year = scanner.nextInt();
+
+        // Get month from the user
+        System.out.print("Enter the month (1-12): ");
+        int month = scanner.nextInt();
+
+        // Get day from the user
+        System.out.print("Enter the day: ");
+        int day = scanner.nextInt();
+
+        // Create a new date with the user's input
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month - 1);
+        calendar.set(Calendar.DAY_OF_MONTH, day);
+        Date userDate = calendar.getTime();
+
+        System.out.println("User Input Date: " + userDate);
+
+        // Don't forget to close the scanner when you're done
+        scanner.close();
+    }
+}
